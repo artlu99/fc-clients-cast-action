@@ -1,14 +1,11 @@
 import { Button, Frog } from "frog";
 import { neynar } from "frog/hubs";
-import {
-  farquest,
-  neynar as neynarExplorer,
-  supercast,
-  vasco,
-} from "./lib/deeplink";
+import { farquest, recaster, supercast, vasco } from "./lib/deeplink";
 
 export const app = new Frog({
   hub: neynar({ apiKey: "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX" }),
+  title: "FC Alt Client Redirect",
+  verify: true,
 });
 
 app.frame("/", (c) => {
@@ -46,7 +43,7 @@ app.frame("/redirect", (c) => {
     console.log(`${frameData.fid} asked to redirect ${castFid}:${castHash}`);
 
     const sc = supercast(castHash);
-    const ne = neynarExplorer(castHash);
+    const rc = recaster(castHash);
     const fq = farquest(castHash, castFid);
     const vw = vasco(castHash);
 
@@ -54,7 +51,7 @@ app.frame("/redirect", (c) => {
       image: "https://r2.fc-clients-cast-action.artlu.xyz/ephemeral-frame.png",
       intents: [
         <Button.Link href={sc}>Supercast</Button.Link>,
-        <Button.Link href={ne}>Neynar</Button.Link>,
+        <Button.Link href={rc}>Recaster</Button.Link>,
         <Button.Link href={fq}>far.quest Pro</Button.Link>,
         <Button.Link href={vw}>Vasco</Button.Link>,
       ],
