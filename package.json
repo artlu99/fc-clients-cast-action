@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "frog": "latest",
-    "hono": "^4"
+    "hono": "^4.6.8"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "latest",
