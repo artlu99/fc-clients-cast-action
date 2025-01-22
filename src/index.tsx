@@ -1,6 +1,6 @@
 import { Button, Frog } from "frog";
 import { neynar } from "frog/hubs";
-import { farquest, recaster, supercast, vasco } from "./lib/deeplink";
+import { firefly, recaster, supercast, vasco } from "./lib/deeplink";
 
 export const app = new Frog({
   hub: neynar({ apiKey: "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX" }),
@@ -44,7 +44,7 @@ app.frame("/redirect", (c) => {
 
     const sc = supercast(castHash);
     const rc = recaster(castHash);
-    const fq = farquest(castHash, castFid);
+    const ff = firefly(castHash);
     const vw = vasco(castHash);
 
     return c.res({
@@ -52,7 +52,7 @@ app.frame("/redirect", (c) => {
       intents: [
         <Button.Link href={sc}>Supercast</Button.Link>,
         <Button.Link href={rc}>Recaster</Button.Link>,
-        <Button.Link href={fq}>far.quest Pro</Button.Link>,
+        <Button.Link href={ff}>Firefly</Button.Link>,
         <Button.Link href={vw}>Vasco</Button.Link>,
       ],
     });
