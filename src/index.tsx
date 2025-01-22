@@ -1,4 +1,4 @@
-import { Button, Frog } from "frog";
+import { Button, FrameContext, Frog } from "frog";
 import { neynar } from "frog/hubs";
 import { firefly, recaster, supercast, vasco } from "./lib/deeplink";
 
@@ -8,7 +8,8 @@ export const app = new Frog({
   verify: true,
 });
 
-app.frame("/", (c) => {
+app.frame("/", (c: FrameContext
+) => {
   return c.res({
     image: "https://r2.fc-clients-cast-action.artlu.xyz/frame.png",
     intents: [
@@ -24,7 +25,7 @@ app.frame("/", (c) => {
 
 app.castAction(
   "/action-frame",
-  (c) => {
+  (c: FrameContext) => {
     return c.res({ type: "frame", path: "/redirect" });
   },
   {
@@ -35,7 +36,7 @@ app.castAction(
   }
 );
 
-app.frame("/redirect", (c) => {
+app.frame("/redirect", (c: FrameContext) => {
   const { verified, frameData } = c;
 
   if (verified && frameData) {
@@ -62,7 +63,7 @@ app.frame("/redirect", (c) => {
     });
 });
 
-app.frame("cpanel", (c) => {
+app.frame("cpanel", (c: FrameContext) => {
   const { verified } = c;
 
   if (verified) {

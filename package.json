@@ -9,11 +9,11 @@
     "wrangler:static": "cp -r ./node_modules/frog/_lib/ui/.frog ./public/frog"
   },
   "dependencies": {
-    "frog": "^0.18.0",
-    "hono": "^4.6.8"
+    "frog": "^0.18.3",
+    "hono": "^4.6.17"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20241022.0",
-    "wrangler": "^3.84.1"
+    "@cloudflare/workers-types": "^4.20250121.0",
+    "wrangler": "^3.103.2"
   }
 }
