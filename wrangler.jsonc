@@ -1,0 +1,6 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"main": "src/index.tsx",
+	"name": "fc-clients-cast-action",
+	"compatibility_date": "2025-04-08"
+}

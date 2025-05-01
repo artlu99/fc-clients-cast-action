@@ -4,16 +4,13 @@
   "type": "module",
   "scripts": {
     "dev": "frog dev",
-    "wrangler:dev": "wrangler dev src/index.tsx",
-    "wrangler:deploy": "wrangler deploy --minify src/index.tsx",
-    "wrangler:static": "cp -r ./node_modules/frog/_lib/ui/.frog ./public/frog"
+    "wrangler:deploy": "wrangler deploy --minify src/index.tsx"
   },
   "dependencies": {
     "frog": "^0.18.3",
-    "hono": "^4.6.17"
+    "hono": "^4.7.8"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20250121.0",
-    "wrangler": "^3.103.2"
+    "wrangler": "^4.14.1"
   }
 }
