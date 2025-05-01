@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "frog dev",
-    "wrangler:deploy": "wrangler deploy --minify src/index.tsx"
+    "deploy": "wrangler deploy --minify src/index.tsx"
   },
   "dependencies": {
     "frog": "^0.18.3",
