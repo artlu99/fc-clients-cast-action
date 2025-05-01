@@ -24,6 +24,6 @@ export const recaster = (hash: string | `0x${string}`): string => {
 
 export const firefly = (hash: string | `0x${string}`): string => {
   return hash
-    ? `https://firefly.mask.social/post/farcaster/${hash}`
-    : "https://firefly.mask.social";
+    ? `https://firefly.social/post/farcaster/${hash}`
+    : "https://firefly.social";
 };
